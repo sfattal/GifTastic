@@ -11,16 +11,14 @@ for (i = 0; i < topics.length; i++) {
 
 $(document).on("click", ".btns", function() {
     var emotion = $(this).val();
-    console.log(emotion)
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + emotion + "&api_key=OAOml4nsVDKZnPwbip5iGgvQf4CSMOoO&limit=10";
 
     $.ajax({
         url: queryURL,
         method: "GET"
-      })
+    })
       .then(function(response) {
-        var results = response;
-
+        var results = response.data;
         for (var i = 0; i < results.length; i++) {
             var gifDiv = $("<div>");          
             var rating = results[i].rating;
@@ -29,8 +27,7 @@ $(document).on("click", ".btns", function() {
             emotionImage.attr("src", results[i].images.fixed_height.url);
             gifDiv.append(p);
             gifDiv.append(emotionImage);
-            $("#output").append(gifDiv);
+            $("#output").prepend(gifDiv);
         }
-        console.log(results)
     });
 })
