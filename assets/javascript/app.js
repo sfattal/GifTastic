@@ -1,14 +1,19 @@
 var topics = ["awkward", "bored", "confused", "angry", "excited", "drunk", "frustrated", "hungry", "mind-blown", "tired", "disappointed", "embarrassed", "relaxed", "happy", "sad", "stressed", "nervous"];
 var emotion = "";
 
-for (i = 0; i < topics.length; i++) {
+// Create and Append Buttons:
+function buttons() {
     var buttons = $("<button>");
     buttons.text(topics[i]);
     buttons.val(topics[i]);
     buttons.addClass("btns");
     $("#buttons").append(buttons);
 }
+for (i = 0; i < topics.length; i++) {
+    buttons();
+}
 
+// Main Function:
 $(document).on("click", ".btns", function() {
     var emotion = $(this).val();
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + emotion + "&api_key=OAOml4nsVDKZnPwbip5iGgvQf4CSMOoO&limit=10";
@@ -39,6 +44,7 @@ $(document).on("click", ".btns", function() {
     });
 })
 
+// Pause/Play Function:
 $(document).on("click", ".imgs", function() {
     var state = $(this).attr("data-state");
     if (state === "still") {
@@ -48,4 +54,16 @@ $(document).on("click", ".imgs", function() {
             $(this).attr("src", $(this).attr("data-still"));
             $(this).attr("data-state", "still");
     }
+});
+
+// Add Emotion Function:
+$("#add-emotion").on("click", function(event) {
+    event.preventDefault();
+
+    var addEmotion = $("#emotion").val().trim();
+    topics.push(addEmotion);
+    i = (topics.length - 1);
+    console.log(i);
+    console.log(topics);
+    buttons();
 });
