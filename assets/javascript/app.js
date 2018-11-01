@@ -63,7 +63,5 @@ $("#add-emotion").on("click", function(event) {
     var addEmotion = $("#emotion").val().trim();
     topics.push(addEmotion);
     i = (topics.length - 1);
-    console.log(i);
-    console.log(topics);
     buttons();
 });

@@ -1,0 +1,21 @@
+body {
+    background: url("../images/background.png");
+}
+
+#add {
+    color: white;
+    font-weight: bold;
+}
+button {
+    background-color: transparent;
+    color: greenyellow;
+    border-bottom-color: greenyellow;
+}
+img {
+    float: left;
+}
+p {
+    color: white;
+    font-weight: bold;
+    float: left;
+}
