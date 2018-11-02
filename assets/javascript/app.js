@@ -39,7 +39,7 @@ $(document).on("click", ".btns", function() {
             emotionImage.addClass("imgs");
             gifDiv.append(p);
             gifDiv.append(emotionImage);
-            $("#group").prepend(gifDiv);
+            $("#group").prepend(gifDiv); 
         }
     });
 })
