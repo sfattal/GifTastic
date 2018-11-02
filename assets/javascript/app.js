@@ -31,15 +31,15 @@ $(document).on("click", ".btns", function() {
             var p = $("<p>").text("Rating: " + rating);
             var emotionImage = $("<img>");
             emotionImage.attr({
-                "src": results[i].images.downsized_still.url, 
-                "data-still": results[i].images.downsized_still.url, 
-                "data-animate": results[i].images.downsized.url,
+                "src": results[i].images.fixed_width_still.url, 
+                "data-still": results[i].images.fixed_width_still.url, 
+                "data-animate": results[i].images.fixed_width.url,
                 "data-state": "still"
             });
             emotionImage.addClass("imgs");
             gifDiv.append(p);
             gifDiv.append(emotionImage);
-            $("#output").prepend(gifDiv);
+            $("#group").prepend(gifDiv);
         }
     });
 })

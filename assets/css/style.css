@@ -6,16 +6,17 @@ body {
     color: white;
     font-weight: bold;
 }
-button {
+button, #add-emotion {
     background-color: transparent;
     color: greenyellow;
-    border-bottom-color: greenyellow;
+    border-color: greenyellow;
+    margin: 5px;
 }
 img {
-    float: left;
+    /* float: left; */
 }
 p {
     color: white;
     font-weight: bold;
-    float: left;
+    /* float: left; */
 }
