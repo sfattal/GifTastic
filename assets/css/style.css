@@ -12,11 +12,11 @@ button, #add-emotion {
     border-color: greenyellow;
     margin: 5px;
 }
-img {
-    /* float: left; */
-}
 p {
     color: white;
     font-weight: bold;
-    /* float: left; */
+}
+.group {
+    width: 50%;
+    float: left;
 }
